@@ -24,7 +24,7 @@ const ListItem: React.FC<ListItemProps> = ({ image, name, href }) => {
             </div>
             <div className="flex flex-col justify-center">
                 <p className="font-medium truncate py-5">{name}</p>
-                <div className="absolute transition opacity-0 rounded-full flex items-center justify-center bg-blue-700 p-4 drop-shadow-md right-5 group-hover:opacity-100 hover:scale-110">
+                <div className="absolute transition opacity-0 rounded-full flex items-center justify-center bg-emerald-200 p-4 drop-shadow-md right-5 group-hover:opacity-100 hover:scale-110">
                     <FaPlay className="text-black" />
                 </div>
             </div>

@@ -6,6 +6,9 @@ import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useSupabaseClient} from "@supabase/auth-helpers-react";
+import { useUser } from "@/hooks/useUser";
 
 
 interface HeaderProps {
@@ -14,10 +17,15 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({children,className}) => {
+    const authModal = useAuthModal();
     const router = useRouter();
+    const supabaseClient= useSupabaseClient();
+    const {user, subscription}= useUser();
 
-    const handlelogout = ()=>{
-        //logout feature
+    const handlelogout = async()=>{
+        const { error } = await supabaseClient.auth.signOut();
+        //reset any playing songs
+        router.refresh();
     }
 
     return (
@@ -42,10 +50,10 @@ const Header: React.FC<HeaderProps> = ({children,className}) => {
                 <div className="flex justify-between items-center gap-x-4">
                     <>
                     <div>
-                        <Button onClick={()=>{}} className="bg-transparent text-neutral-300 font-medium">Sign up</Button>
+                        <Button onClick={authModal.onOpen} className="bg-transparent text-neutral-300 font-medium">Sign up</Button>
                     </div>
                     <div>
-                        <Button onClick={()=>{}} className="bg-white px-6 py-2">Log in</Button>
+                        <Button onClick={authModal.onOpen} className="bg-white px-6 py-2">Log in</Button>
                     </div>
 
                     </>
