@@ -51,7 +51,7 @@ const UploadModal = () => {
             const{
                 data:songData,
                 error: songError,
-            }=await supabaseClient.storage.from('track').upload(`track-${values.title}-${uniqueID}` ,songFile,{
+            }=await supabaseClient.storage.from('track').upload(`track-${values.title}` ,songFile,{
                 cacheControl:'3600',
                 upsert: false
             });
@@ -77,7 +77,7 @@ const UploadModal = () => {
 
             const {
                 error: supabaseError
-            } = await supabaseClient.from('songs').insert({
+            } = await supabaseClient.from('track').insert({
                 user_id: user.id,
                 title: values.title,
                 artist: values.artist,
@@ -145,7 +145,7 @@ const UploadModal = () => {
                     type="file"
                     disabled={isLoading}
                     accept=".jpg"
-                    {...register('song',{required: true})}
+                    {...register('artwork',{required: true})}
                 />
                 </div>
                 <Button disabled={isLoading} type="submit">
