@@ -60,12 +60,13 @@ const UploadModal = () => {
                 setIsLoading(false);
                 return toast.error('Failed Track Upload')
             }
+            
 
             //img uplaod
             const{
                 data:imageData,
                 error: imageError,
-            }=await supabaseClient.storage.from('artwork').upload(`artwork-${values.title}-${uniqueID}` ,imageFile,{
+            }=await supabaseClient.storage.from('artwork').upload(`artwork-${values.title}` ,imageFile,{
                 cacheControl:'3600',
                 upsert: false
             });
