@@ -16,6 +16,29 @@ const SupabaseProvider: React.FC<SupabaseProviderProps>=({children})=>{
         <SessionContextProvider supabaseClient={supabaseClient}>
             {children}
         </SessionContextProvider>
+          <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>  <SessionContextProvider supabaseClient={supabaseClient}>
+            {children}
+        </SessionContextProvider>
     )
 }
 
