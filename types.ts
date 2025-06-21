@@ -8,27 +8,7 @@ export interface Song{
     song_path: string;
     image_path: string;
 };
-export interface userDetails{
-    id:string;
-    first_name: string;
-    last_name:string;
-    full_name?: string;
-    avatar_url?: string;
-    billing_address?: Stripe.Address;
-    payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
-};
 
-export interface Product{
-    id: string;
-    active?: boolean;
-    name?:string;
-    description?: string;
-    image?: string;
-    metadata?: Stripe.Metadata;
-}
-
-export interface Price{
-    id:string;
     product_id?:string;
     active?: boolean;
     description?: string;
